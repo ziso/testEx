@@ -4,25 +4,63 @@ import Immutable from 'immutable';
 const initialState = Immutable.fromJS({
   loaded: false,
   users: [
-    { id: '1', name: 'user1', site: 'http://...', image: 'image url' },
-    { id: '2', name: 'user2', site: 'http://...', image: 'image url' },
-    { id: '3', name: 'user3', site: 'http://...', image: 'image url' },
-    { id: '4',  name: 'user4', site: 'http://...', image: 'image url' },
+    { id: '1', name: 'Aharon', site: 'http://sheker-kolshehu.com', image: 'TBD' },
+    { id: '2', name: 'Abe', site: 'http://...', image: 'TBD' },
+    { id: '3', name: 'Zaratustra', site: 'http://...', image: 'TBD' },
+    { id: '4', name: 'Shoval', site: 'http://...', image: 'TBD' }
   ],
   selectedUser: null,
   userAlbums: {
     1 : [
-      {id: '1', title: 'Album 1', artist: 'artist 1', image: 'album title image', selected: false},
-      {id: '2', title: 'Album 2', artist: 'artist 2', image: 'album title image', selected: true},
-      {id: '3', title: 'Album 3', artist: 'artist 3', image: 'album title image', selected: false},
-      {id: '4', title: 'Album 4', artist: 'artist 4', image: 'album title image', selected: false}
+      {id: '1', title: 'ABBA gold', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '2', title: 'LALA land', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '3', title: 'Yomtov', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '4', title: 'ABBA silver', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '5', title: 'LALA sea', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '6', title: 'Yomra', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '7', title: 'ABBA platinum', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '8', title: 'LALA air', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '9', title: 'Yomkaha kaha', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '10', title: 'Shuv', artist: 'Einstein', image: 'TBD', selected: false}
     ],
 
     2 : [
-      {id: '1', title: 'Album 1', artist: 'artist 1', image: 'album title image', selected: false},
-      {id: '2', title: 'Album 2', artist: 'artist 2', image: 'album title image', selected: true},
-      {id: '3', title: 'Album 3', artist: 'artist 3', image: 'album title image', selected: false},
-      {id: '4', title: 'Album 4', artist: 'artist 4', image: 'album title image', selected: false}
+      {id: '1', title: 'ABBA gold', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '2', title: 'LALA land', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '3', title: 'Yomtov', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '4', title: 'ABBA silver', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '5', title: 'LALA sea', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '6', title: 'Yomra', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '7', title: 'ABBA platinum', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '8', title: 'LALA air', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '9', title: 'Yomkaha kaha', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '10', title: 'Shuv', artist: 'Einstein', image: 'TBD', selected: false}
+    ],
+
+    3: [
+      {id: '1', title: 'ABBA gold', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '2', title: 'LALA land', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '3', title: 'Yomtov', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '4', title: 'ABBA silver', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '5', title: 'LALA sea', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '6', title: 'Yomra', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '7', title: 'ABBA platinum', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '8', title: 'LALA air', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '9', title: 'Yomkaha kaha', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '10', title: 'Shuv', artist: 'Einstein', image: 'TBD', selected: false}
+    ],
+
+    4: [
+      {id: '1', title: 'ABBA gold', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '2', title: 'LALA land', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '3', title: 'Yomtov', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '4', title: 'ABBA silver', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '5', title: 'LALA sea', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '6', title: 'Yomra', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '7', title: 'ABBA platinum', artist: 'ABBA', image: 'TBD', selected: false},
+      {id: '8', title: 'LALA air', artist: 'Eliyahu', image: 'TBD', selected: false},
+      {id: '9', title: 'Yomkaha kaha', artist: 'Arik', image: 'TBD', selected: false},
+      {id: '10', title: 'Shuv', artist: 'Einstein', image: 'TBD', selected: false}
     ]
   }
 });

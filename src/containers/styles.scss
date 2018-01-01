@@ -1,4 +1,3 @@
-
 body {
   font-family: Helvetica, Arial, Sans-Serif;
 }
@@ -9,8 +8,9 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 80px;
+    width: 180px;
     margin: 10px;
+    background-color: rgb(180, 180, 180);
     img{
       width: 20px;
       height: 20px;
@@ -26,31 +26,36 @@ body {
       .artist-name{
       }
     }
+  }
+  .selected{
+    color: rgb(182, 182, 182);
+    background-color: rgb(243, 243, 243);
   }  
+
 }
 
 .users-list{
   padding: 0px;
   .user-row {
-    display: flex;
-    flex-direction: row;
     margin: 10px;
     height: 28px;
     border-bottom: 1px solid rgb(102, 102, 102);
     img{
-      flex-grow: 1;
+      display: inline-block;
+      width: 50px;
     }
     .user-name{
-      flex-grow: 3;
+      display: inline-block;
+      width: 180px;
     }
     .user-site{
-      flex-grow: 6;
+      display: inline-block;
     }
   }
 }
 
 .header {
-  background-color: blue;
+  background-color: rgb(82, 82, 231);
   width: 100%;
   height: 40px;
 }
