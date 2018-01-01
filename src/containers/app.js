@@ -19,7 +19,8 @@ export class AppContainer extends Component {
                             selectUser={this.props.actions.selectUser}
                           />;
     
-    const UserScreenView = <UserScreen albums={this.props.albums[this.props.selectedUser]}/>;
+    const UserScreenView = <UserScreen selectedUser={this.props.selectedUser} albums={this.props.albums[this.props.selectedUser]} selectAlbum={this.props.actions.addAlbumToSelectedList}/>;
+
 
     if (!this.props.loaded) {
       return null;
@@ -33,7 +34,9 @@ export class AppContainer extends Component {
 
     return (
       <div>
-        <div className="header"></div>
+        <div className="header">
+          <button onClick={() => {this.props.actions.selectUser("")}}>Back to Users</button>
+        </div>
         {activeView}
       </div>
     );

@@ -1,4 +1,4 @@
-import { APP_LOAD, USER_SELECTED } from 'constants/action-types';
+import { APP_LOAD, USER_SELECTED, MARK_ALBUM_AS_SELECTED } from 'constants/action-types';
 
 export function loadApp() {
   return {
@@ -10,5 +10,13 @@ export function selectUser(id) {
   return {
     type: USER_SELECTED,
     id
+  };
+}
+
+export function addAlbumToSelectedList(userId, albumId) {
+  return {
+    type: MARK_ALBUM_AS_SELECTED,
+    userId,
+    albumId
   };
 }

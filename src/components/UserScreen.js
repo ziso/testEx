@@ -5,8 +5,17 @@ import PostsPanel from './PostsPanel';
 import AlbumPanel from './AlbumsPanel';
 
 class UserScreen extends Component {
+  constructor(props) {
+    super(props)
+    this.onSelection = this.onSelection.bind(this)
+}
+  onSelection (albumId) {
+    this.props.selectAlbum(this.props.selectedUser, albumId);
+  }
 
   render() {
+    
+
     return (
       <div>
         <img src={this.props.image}/>
@@ -20,7 +29,7 @@ class UserScreen extends Component {
             <PostsPanel posts={this.props.posts}/>
           </TabPanel>
           <TabPanel>
-            <AlbumPanel albums={this.props.albums}/>
+            <AlbumPanel albums={this.props.albums} selectAlbum={this.onSelection}/>
           </TabPanel>
         </Tabs>
       </div>

@@ -3,11 +3,18 @@ import React, { Component } from 'react';
 class Album extends Component {
 
   render() {
-    return (
-      <div onClick={()=>{this.props.selectAlbum(this.props.id)}} className="album">
-          <img src={this.props.image}/>
-          <div>{this.props.title}</div>
-          <div>{this.props.artist}</div>
+    let style = {
+            
+    };
+
+    if(this.props.data.selected){
+        style.backgroundColor = 'grey';
+    }
+    return (   
+      <div onClick={()=>{this.props.selectAlbum(this.props.data.id)}} className="album" style={style}>
+          <img src={this.props.data.image}/>
+          <div>{this.props.data.title}</div>
+          <div>{this.props.data.artist}</div>
       </div>
     );
   }

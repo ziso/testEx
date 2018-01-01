@@ -7,11 +7,7 @@ class AlbumsPanel extends Component {
     return (
       <ul className="album-list">
           {this.props.albums.map((album) => 
-            <Album id={album.id}
-            title={album.title}
-            artist={album.artist}
-            image={album.image}
-            />
+            <Album data={album} selectAlbum={this.props.selectAlbum} key={album.id}/>
           )}
       </ul>
     );
