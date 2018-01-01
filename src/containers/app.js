@@ -45,10 +45,10 @@ export class AppContainer extends Component {
 
 function mapStateToProperties(state) {
   return {
-    loaded: state.app.loaded,
-    users: state.app.users,
-    selectedUser: state.app.selectedUser,
-    albums: state.app.userAlbums
+    loaded: state.app.get('loaded'),
+    users: state.app.get('users').toJS(),
+    selectedUser: state.app.get('selectedUser'),
+    albums: state.app.get('userAlbums').toJS()
   };
 }
 
