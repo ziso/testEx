@@ -6,7 +6,6 @@ import UsersList from '../components/UsersList';
 import UserScreen from '../components/UserScreen';
 import { bindActionCreators } from 'redux'
 import 'react-tabs/style/react-tabs.css';
-import { createSelector } from 'reselect'
 import Immutable from 'immutable';
 
 export class AppContainer extends Component {
@@ -41,7 +40,7 @@ export class AppContainer extends Component {
     return (
       <div>
         <div className="header">
-          <button onClick={() => {this.props.actions.selectUser("")}}>Back to Users</button>
+          <button onClick={() => {this.props.actions.selectUser("")}}>Home</button>
         </div>
         {activeView}
       </div>

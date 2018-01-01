@@ -13,8 +13,8 @@ class UsersList extends Component {
     return (
       <div className="user-row">
           <img src={this.props.image}/>
-          <div onClick={handleNameClick}>{this.props.name}</div>
-          <a href="" onClick={handleLinkClick}>{this.props.site}</a>
+          <div className="user-name" onClick={handleNameClick}>{this.props.name}</div>
+          <a className="user-site"href="" onClick={handleLinkClick}>{this.props.site}</a>
       </div>
     );
   }

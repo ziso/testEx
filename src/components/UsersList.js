@@ -5,7 +5,7 @@ class UsersList extends Component {
 
   render() {
     return (
-      <ul className='list'>
+      <ul className='users-list'>
                 {this.props.users.map((user) =>
                     <UserRow
                         id={user.id}
