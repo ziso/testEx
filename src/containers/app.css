@@ -1,7 +1,3 @@
-.container {
-  /*App container styles belongs here*/
-}
-
-.user-image{
-  width: 20px;
+.user-row{
+  background-color: aquamarine;
 }

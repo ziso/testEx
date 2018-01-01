@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styles from '../containers/app.css';
 import UserRow from "./UserRow";
 
 class UsersList extends Component {

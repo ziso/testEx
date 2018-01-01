@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styles from '../containers/app.css';
 
 class UsersList extends Component {
 
@@ -12,7 +11,7 @@ class UsersList extends Component {
         this.props.onNameClicked(this.props.id);
     };
     return (
-      <div className="user-image">
+      <div className="user-row">
           <img src={this.props.image}/>
           <div onClick={handleNameClick}>{this.props.name}</div>
           <a href="" onClick={handleLinkClick}>{this.props.site}</a>

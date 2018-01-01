@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions/app';
-import styles from './app.css';
+import './styles.scss';
 import UsersList from '../components/UsersList';
 import UserScreen from '../components/UserScreen';
 import { bindActionCreators } from 'redux'
+import 'react-tabs/style/react-tabs.css';
 
 export class AppContainer extends Component {
   componentDidMount() {
@@ -12,22 +13,30 @@ export class AppContainer extends Component {
   }
 
   render() {
+    let activeView;
+
+    const UsersListView = <UsersList users={this.props.users}
+                            selectUser={this.props.actions.selectUser}
+                          />;
+    
+    const UserScreenView = <UserScreen albums={this.props.albums[this.props.selectedUser]}/>;
+
     if (!this.props.loaded) {
       return null;
     }
 
     if(this.props.selectedUser){
-      return (
-        <UserScreen/>
-      );
+      activeView = UserScreenView;
+    } else {
+      activeView = UsersListView;
     }
-    else {
-      return (
-        <UsersList users={this.props.users}
-        selectUser={this.props.actions.selectUser}
-        />
-      );
-    }
+
+    return (
+      <div>
+        <div className="header"></div>
+        {activeView}
+      </div>
+    );
   }
 }
 
@@ -35,7 +44,8 @@ function mapStateToProperties(state) {
   return {
     loaded: state.app.loaded,
     users: state.app.users,
-    selectedUser: state.app.selectedUser
+    selectedUser: state.app.selectedUser,
+    albums: state.app.userAlbums
   };
 }
 
