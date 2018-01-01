@@ -8,10 +8,15 @@ class UserScreen extends Component {
   constructor(props) {
     super(props)
     this.onSelection = this.onSelection.bind(this)
+    this.onSelectionRemoved = this.onSelectionRemoved.bind(this)
 }
-  onSelection (albumId) {
-    this.props.selectAlbum(this.props.selectedUser, albumId);
-  }
+onSelection (albumId) {
+  this.props.selectAlbum(this.props.selectedUser, albumId);
+}
+
+onSelectionRemoved (albumId) {
+  this.props.deSelectAlbum(this.props.selectedUser, albumId);
+}
 
   render() {
     
@@ -29,7 +34,7 @@ class UserScreen extends Component {
             <PostsPanel posts={this.props.posts}/>
           </TabPanel>
           <TabPanel>
-            <AlbumPanel albums={this.props.albums} selectAlbum={this.onSelection}/>
+            <AlbumPanel albums={this.props.albums} selectAlbum={this.onSelection} deSelectAlbum={this.onSelectionRemoved} selectedAlbums={this.props.selectedAlbums}/>
           </TabPanel>
         </Tabs>
       </div>

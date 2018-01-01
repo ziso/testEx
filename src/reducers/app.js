@@ -1,4 +1,4 @@
-import { APP_LOAD, USER_SELECTED, MARK_ALBUM_AS_SELECTED } from 'constants/action-types';
+import { APP_LOAD, USER_SELECTED, MARK_ALBUM_AS_SELECTED, MARK_ALBUM_AS_NOT_SELECTED } from 'constants/action-types';
 import Immutable from 'immutable';
 
 const initialState = Immutable.fromJS({
@@ -35,9 +35,15 @@ export default function app(state = initialState, action) {
     case USER_SELECTED:
       return state.set('selectedUser', action.id);
     case MARK_ALBUM_AS_SELECTED:
-      let index = (state.getIn(['userAlbums', action.userId])).findIndex((album)=>{return album.get('id') === action.albumId});
-      return state.setIn(['userAlbums', action.userId, index, 'selected'], true);      
+      return markAlbumSelection(state, action.userId, action.albumId, true);
+    case MARK_ALBUM_AS_NOT_SELECTED:
+      return markAlbumSelection(state, action.userId, action.albumId, false);
     default:
       return state;
+  }
+
+  function markAlbumSelection(state, userId, albumId, selected){
+    let index = (state.getIn(['userAlbums', userId])).findIndex((album)=>{return album.get('id') === albumId});
+    return state.setIn(['userAlbums', userId, index, 'selected'], selected);      
   }
 }

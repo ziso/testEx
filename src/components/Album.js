@@ -11,7 +11,7 @@ class Album extends Component {
         style.backgroundColor = 'grey';
     }
     return (   
-      <div onClick={()=>{this.props.selectAlbum(this.props.data.id)}} className="album" style={style}>
+      <div onClick={()=>{this.props.albumClicked(this.props.data.id)}} className="album" style={style}>
           <img src={this.props.data.image}/>
           <div>{this.props.data.title}</div>
           <div>{this.props.data.artist}</div>
